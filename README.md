@@ -1,6 +1,6 @@
-##### Multi-KernelSize CNN & GRU Char-Level Text Classification
+## Multi-KernelSize CNN & GRU Char-Level Text Classification
 
-##### Core Idea:
+### Core Idea:
 The data is in a deterministic mapping and there is no tokenization,  
 so we choose the Char-Level text classification to solve the problem.  
 Using multi-size kernel CNN with GRU by comparing several methods from some papers. Reference as below.  
@@ -10,14 +10,14 @@ In the experiment stage, tf.saver is used, for the submitted version, the tf.sav
   
   
   
-##### Reference:  
+### Reference:  
 Kim, Y. (2014). Convolutional neural networks for sentence classification. arXiv preprint arXiv:1408.5882.  
 Zhang, X., Zhao, J., & LeCun, Y. (2015). Character-level convolutional networks for text classification. In Advances in neural information processing systems (pp. 649-657).  
 Lai, S., Xu, L., Liu, K., & Zhao, J. (2015, January). Recurrent Convolutional Neural Networks for Text Classification. In AAAI (Vol. 333, pp. 2267-2273).  
   
     
     
-##### Model Explanation:
+### Model Explanation:
 One-hot of document as the input, it has 3 dimensions (batchsize, sentence_length, one_hot_length)  
 The first CNN layers, kernel size 7 and 5 were used to extract different n-grams.  
 The higher CNN layers extract higher level of abstraction.  
@@ -29,7 +29,7 @@ Batch size is 128, validate data set is 1600, Learning rate is 0.001, Adam_optim
   
   
   
-##### Training instructions：
+### Training instructions：
 Keep adjusting the parameters in model, and after achieving the 0.817 validation accuracy, seems like it works.  
 I also put the best checkpoint in the folder, you can use it to train and validate.  
 If you want to use the checkpoint, please change "restore_train_model = False".    
